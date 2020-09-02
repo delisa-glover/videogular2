@@ -30,7 +30,7 @@ export class VgUtils {
     }
 
     static isiOSDevice() {
-        return (navigator.userAgent.match(/ip(hone|ad|od)/i) && !navigator.userAgent.match(/(iemobile)[\/\s]?([\w\.]*)/i));
+        return ((navigator.userAgent.match(/ip(hone|ad|od)/i) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !navigator.userAgent.match(/(iemobile)[\/\s]?([\w\.]*)/i));
     }
 
     static isCordova() {
